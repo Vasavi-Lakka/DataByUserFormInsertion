@@ -15,7 +15,13 @@
             {% csrf_token %}
 
             <label for="n">Name</label>
-            <input type="text" name="n" id="n"> <br><br>
+            <!-- <input type="text" name="n" id="n"> <br><br> -->
+             <select name="n" id="n">
+                {% for wo in LWO %}
+                    <option value="{{wo.id}}">{{wo.name}}</option>
+
+                {% endfor %}
+             </select><br><br>
 
             <label for="a">Author</label>
             <input type="text" name="a" id="a"><br><br>
@@ -26,7 +32,7 @@
             <label for="e">email</label>
             <input type="email" name="e" id="e"><br><br>
 
-            <input type="submit" value="InsertWebpage">
+            <input type="submit" value="InsertAccess">
 
         </form>
     </center>
