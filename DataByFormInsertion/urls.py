@@ -22,5 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('insertTopic/', insertTopic, name='insertTopic'),
     path('insertWebpage/', insertWebpage, name='insertWebpage'), # type: ignore
-    path('insertAccess/', insertAccess, name='insertAccess')
+    path('insertAccess/', insertAccess, name='insertAccess'),
+    path('selectMultiple/', selectMultiple, name='selectMultiple'),
+    #path('displayWebpage/', displayWebpage, name='displayWebpage'),  # type: ignore
+    path('selectMultipleAccess/', selectMultipleAccess, name='selectMultipleAccess',)
 ]

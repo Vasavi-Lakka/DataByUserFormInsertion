@@ -109,3 +109,31 @@ def insertAccess(request):
     
 
     return render(request, 'insertAccess.html', d)
+
+
+def selectMultiple(request):
+    LTO=Topic.objects.all()
+    d={'LTO': LTO}
+
+    if request.method=="POST":
+        MTN=request.POST.getlist('tn')#multipleTopicName
+        EQST=webpage.objects.none()#emptyQueryList
+        for topic in MTN:
+            EQST=EQST|webpage.objects.filter(topic_name=topic)
+        d1={'EQST':EQST}
+        return render(request, 'displayWebpage.html', d1)
+    return render(request, 'selectMultiple.html', d)
+
+
+def selectMultipleAccess(request):
+    LWO=webpage.objects.all()
+    d={'LWO':LWO}
+
+    if request.method=="POST":
+        MN=request.POST.getlist('n')#mutipleNames
+        EQSN=AccessRecord.objects.none()#EmptyquerySETNames
+        for name in MN:
+            EQSN=EQSN|AccessRecord.objects.filter(name=name)
+        d1={'EQSN':EQSN}
+        return render(request, 'displayAccess.html', d1)
+    return render(request, 'selectMultipleAccess.html', d)
