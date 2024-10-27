@@ -25,5 +25,6 @@ urlpatterns = [
     path('insertAccess/', insertAccess, name='insertAccess'),
     path('selectMultiple/', selectMultiple, name='selectMultiple'),
     #path('displayWebpage/', displayWebpage, name='displayWebpage'),  # type: ignore
-    path('selectMultipleAccess/', selectMultipleAccess, name='selectMultipleAccess',)
+    path('selectMultipleAccess/', selectMultipleAccess, name='selectMultipleAccess'),
+    path('checkBox/', checkBox, name='checkBox'),
 ]

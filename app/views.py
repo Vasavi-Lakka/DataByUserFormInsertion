@@ -137,3 +137,13 @@ def selectMultipleAccess(request):
         d1={'EQSN':EQSN}
         return render(request, 'displayAccess.html', d1)
     return render(request, 'selectMultipleAccess.html', d)
+
+
+
+def checkBox(request):
+    LTO=Topic.objects.all()
+    d={'LTO': LTO}
+ 
+ 
+    return render(request, 'checkBox.html', d)
+
